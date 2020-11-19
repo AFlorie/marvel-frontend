@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <Header />
-      <NavBar />
       <Router>
+        <NavBar />
         <Switch>
           <Route path="/character/:id">
             <Character />
