@@ -1,38 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import noPicture from "../img/noCover.png";
 
-const Character = () => {
-  const { id } = useParams();
+const Comics = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  //console.log(id);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://fa-marvel-backend.herokuapp.com/character/${id}`
+          "https://fa-marvel-backend.herokuapp.com/comics"
         );
-
-        // console.log(response.data.data.results);
         setData(response.data.data);
         setIsLoading(false);
+        //console.log(data);
       } catch (error) {
         console.log(error.message);
       }
     };
     fetchData();
-  }, [id]);
+  }, [data]);
 
   return isLoading ? (
     <div>chargement en cours</div>
   ) : (
     <div className="comicsContainer">
       {data.results.map((comic, index) => {
-        console.log(comic);
-        console.log(comic.thumbnail.path + "." + comic.thumbnail.extension);
         return (
           <div className="comic" key={comic.id}>
             <span> {comic.title}</span>
@@ -52,4 +46,4 @@ const Character = () => {
   );
 };
 
-export default Character;
+export default Comics;

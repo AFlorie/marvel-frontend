@@ -29,6 +29,10 @@ header img {
   align-items: center;
 }
 
+.navBar li {
+  color: black;
+}
+
 /* HOME */
 
 .charactersContainer {
@@ -41,7 +45,7 @@ header img {
 }
 
 .charactersContainer .characterProfil {
-  margin: 5px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,6 +65,7 @@ header img {
   height: 150px;
   border-radius: 2px;
   object-fit: cover;
+  object-position: center;
   border-top: 4px solid #ee171f;
 }
 
@@ -83,7 +88,6 @@ header img {
 /* CHARACTER */
 
 .comicsContainer {
-  border: 2px solid blue;
   width: 70%;
   margin: 5px auto;
   display: flex;
@@ -102,9 +106,8 @@ header img {
 }
 
 .comicsContainer .comic {
-  border: 3px solid green;
   background-color: black;
-  margin: 5px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

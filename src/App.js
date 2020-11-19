@@ -5,6 +5,7 @@ import Home from "./containers/Home";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Character from "./containers/Character";
+import Comics from "./containers/Comics";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         <Switch>
           <Route path="/character/:id">
             <Character />
+          </Route>
+          <Route path="/comics">
+            <Comics />
           </Route>
           <Route path="/">
             <Home />
