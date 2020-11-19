@@ -11,8 +11,8 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // "https://fa-marvel-backend.herokuapp.com/"
-          "http://localhost:3001/"
+          "https://fa-marvel-backend.herokuapp.com/"
+          // "http://localhost:3001/"
         );
         //console.log(response.data.data);
         setData(response.data.data);

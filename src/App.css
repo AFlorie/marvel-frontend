@@ -61,8 +61,10 @@ header img {
 
 .charactersContainer p.characterInfo {
   width: 150px;
-  height: 150px;
+  height: 152px;
   color: white;
+  font-size: 14px;
+  overflow-y: scroll;
 }
 
 .hidden {
