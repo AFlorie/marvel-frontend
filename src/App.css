@@ -12,25 +12,42 @@ a {
 header {
   background-color: #ee171f;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-header img {
-  height: 100px;
+header img:nth-child(1) {
+  height: 30px;
 }
 
 /* NAVBAR  */
 
+.navBar {
+  background-color: black;
+  padding: 10px 0 4px 0;
+}
+
 .navBar ul {
-  border: 1px solid blue;
+  width: 60%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .navBar li {
-  color: black;
+  text-transform: uppercase;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  border-bottom: 6px solid black;
+}
+
+.navBar li:hover {
+  border-bottom: 6px solid #ee171f;
 }
 
 /* HOME */
@@ -72,6 +89,7 @@ header img {
 .charactersContainer p.characterInfo {
   width: 150px;
   height: 152px;
+  font-family: "Caveat", cursive;
   color: white;
   font-size: 14px;
   overflow-y: scroll;
@@ -119,4 +137,56 @@ header img {
 .comicsContainer .comic span {
   color: white;
   text-align: center;
+}
+
+/* SEARCH BAR */
+
+section.search {
+  width: 68%;
+  margin: 10px auto;
+}
+
+section.search .inputSearch {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.search .inputSearch i {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  font-size: 20px;
+  color: #767676;
+}
+
+section.search .inputSearch input {
+  padding: 10px 30px;
+  width: 50%;
+  font-size: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+section.search span {
+  color: #767676;
+}
+
+/*  PAGINATION */
+
+.pagination {
+  border: 2px solid blue;
+  width: 68%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination input {
+  width: 40px;
+}
+
+.pagination span {
+  cursor: pointer;
 }
