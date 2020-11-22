@@ -1,6 +1,7 @@
 body {
   width: 100%;
   text-transform: none;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -19,6 +20,10 @@ header {
 
 header img:nth-child(1) {
   height: 30px;
+}
+
+header img:nth-child() {
+  width: 100%;
 }
 
 /* NAVBAR  */
@@ -91,7 +96,7 @@ header img:nth-child(1) {
   height: 152px;
   font-family: "Caveat", cursive;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   overflow-y: scroll;
 }
 
@@ -176,7 +181,6 @@ section.search span {
 /*  PAGINATION */
 
 .pagination {
-  border: 2px solid blue;
   width: 68%;
   margin: 10px auto;
   display: flex;
@@ -189,4 +193,23 @@ section.search span {
 
 .pagination span {
   cursor: pointer;
+}
+
+.pagination span i {
+  padding: 0 5px;
+}
+
+footer {
+  position: relative;
+}
+
+footer img {
+  width: 100%;
+}
+
+footer div {
+  position: absolute;
+  bottom: 10px;
+  right: 40%;
+  color: white;
 }

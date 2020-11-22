@@ -12,27 +12,28 @@ const Home = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const limit = 20;
+  const limit = 5;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get//"https://fa-marvel-backend.herokuapp.com/"
-        `http://localhost:3001/?limit=${limit}&page=${page}`();
-        //console.log(response.data.data);
-        //console.log(response.data.data.total);
+        const response = await axios.get(
+          //`https://fa-marvel-backend.herokuapp.com/comics?limit=${limit}&page=${page}`
+          `http://localhost:3001/?limit=${limit}&page=${page}$name=${search}`
+        );
         setData(response.data.data);
         setTotalPages(
           Math.ceil(response.data.data.total / response.data.data.limit)
         );
         setIsLoading(false);
+        //console.log(data);
       } catch (error) {
         console.log(error.message);
       }
     };
     fetchData();
-    // eslint-disable-next-line
-  }, [data, page]);
+  }, [data]);
+
   return isLoading ? (
     <div>Chargement en cours</div>
   ) : (
@@ -54,7 +55,7 @@ const Home = () => {
           <span>Triés par A-Z</span>
         </div>
       </section>
-      <AllCharacters data={data} search={search} />
+      <AllCharacters data={data} />
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
     </>
   );

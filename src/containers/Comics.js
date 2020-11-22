@@ -30,8 +30,7 @@ const Comics = () => {
       }
     };
     fetchData();
-    // eslint-disable-next-line
-  }, [data, page]);
+  }, [data]);
 
   return isLoading ? (
     <div>chargement en cours</div>

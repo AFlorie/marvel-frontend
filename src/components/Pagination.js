@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Pagination = ({ page, setPage, totalPages }) => {
   return (
@@ -9,14 +10,20 @@ const Pagination = ({ page, setPage, totalPages }) => {
           onClick={() => {
             setPage(--page);
           }}
-        >{`<`}</span>{" "}
-        {page}{" "}
+        >
+          <i>
+            <FontAwesomeIcon icon="backward" />
+          </i>
+        </span>
+        {page}
         <span
           onClick={() => {
             setPage(++page);
           }}
         >
-          {">"}
+          <i>
+            <FontAwesomeIcon icon="forward" />
+          </i>
         </span>
       </div>
       <div>
