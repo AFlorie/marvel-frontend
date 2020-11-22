@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import AllCharacters from "../components/AllCharacters";
 import Pagination from "../components/Pagination";
+
+import Loader from "react-loader-spinner";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -18,8 +21,8 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          //`https://fa-marvel-backend.herokuapp.com/comics?limit=${limit}&page=${page}`
-          `http://localhost:3001/?limit=${limit}&page=${page}&name=${search}`
+          `https://fa-marvel-backend.herokuapp.com/?limit=${limit}&page=${page}&name=${search}`
+          //`http://localhost:3001/?limit=${limit}&page=${page}&name=${search}`
         );
         setData(response.data.data);
         setTotalPages(
@@ -35,7 +38,16 @@ const Home = () => {
   }, [page, search]);
   console.log(search);
   return isLoading ? (
-    <div>Chargement en cours</div>
+    <div className="loader">
+      <Loader
+        type="Oval"
+        color="#EE171F"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />
+      <h2>Chargement en cours</h2>
+    </div>
   ) : (
     <>
       <section className="search">

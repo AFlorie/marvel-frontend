@@ -4,6 +4,8 @@ import noPicture from "../img/noCover.png";
 
 import Pagination from "../components/Pagination";
 
+import Loader from "react-loader-spinner";
+
 const Comics = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,8 +18,8 @@ const Comics = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          //`https://fa-marvel-backend.herokuapp.com/comics?limit=${limit}&page=${page}`
-          `http://localhost:3001/comics?limit=${limit}&page=${page}`
+          `https://fa-marvel-backend.herokuapp.com/comics?limit=${limit}&page=${page}`
+          //`http://localhost:3001/comics?limit=${limit}&page=${page}`
         );
         setData(response.data.data);
         setTotalPages(
@@ -33,7 +35,16 @@ const Comics = () => {
   }, [page]);
 
   return isLoading ? (
-    <div>chargement en cours</div>
+    <div className="loader">
+      <Loader
+        type="Oval"
+        color="#EE171F"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />
+      <h2>Chargement en cours...</h2>
+    </div>
   ) : (
     <>
       <div className="comicsContainer">
