@@ -8,18 +8,18 @@ import Pagination from "../components/Pagination";
 const Home = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [search, setSearch] = useState("Recherche");
+  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  const limit = 5;
+  const limit = 100;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           //`https://fa-marvel-backend.herokuapp.com/comics?limit=${limit}&page=${page}`
-          `http://localhost:3001/?limit=${limit}&page=${page}$name=${search}`
+          `http://localhost:3001/?limit=${limit}&page=${page}&name=${search}`
         );
         setData(response.data.data);
         setTotalPages(
@@ -32,8 +32,8 @@ const Home = () => {
       }
     };
     fetchData();
-  }, [data]);
-
+  }, [page, search]);
+  console.log(search);
   return isLoading ? (
     <div>Chargement en cours</div>
   ) : (
@@ -47,7 +47,7 @@ const Home = () => {
             type="text"
             id="searchBar"
             name="searchBar"
-            placeholder={search}
+            placeholder="Recherche"
             onChange={(event) => {
               setSearch(event.target.value);
             }}

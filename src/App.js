@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Character from "./containers/Character";
 import Comics from "./containers/Comics";
+import Favorite from "./containers/Favorite";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/comics">
             <Comics />
+          </Route>
+          <Route path="/favoris">
+            <Favorite />
           </Route>
           <Route path="/">
             <Home />

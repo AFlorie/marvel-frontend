@@ -10,7 +10,7 @@ const Comics = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
 
-  const limit = 20;
+  const limit = 100;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +30,7 @@ const Comics = () => {
       }
     };
     fetchData();
-  }, [data]);
+  }, [page]);
 
   return isLoading ? (
     <div>chargement en cours</div>
