@@ -65,7 +65,12 @@ const Comics = () => {
           );
         })}
       </div>
-      <Pagination page={page} setPage={setPage} totalPages={totalPages} />
+      <Pagination
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        setIsLoading={setIsLoading}
+      />
     </>
   );
 };

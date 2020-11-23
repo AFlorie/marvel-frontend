@@ -7,7 +7,7 @@ const Footer = () => {
       <img src={footerImg} alt="" />
       <div className="glow">
         Made with <span>React</span> at <span>LeReacteur</span> by
-        <span> Florie</span>
+        <span> Florie</span> - Data provided by Marvel. © 2014 Marvel
       </div>
     </footer>
   );

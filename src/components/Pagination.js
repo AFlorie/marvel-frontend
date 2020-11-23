@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Pagination = ({ page, setPage, totalPages }) => {
+const Pagination = ({ page, setPage, totalPages, setIsLoading }) => {
   return (
     <div className="pagination">
       <div></div>
@@ -9,6 +9,7 @@ const Pagination = ({ page, setPage, totalPages }) => {
         <span
           onClick={() => {
             setPage(--page);
+            setIsLoading(true);
           }}
         >
           <i>
@@ -19,6 +20,7 @@ const Pagination = ({ page, setPage, totalPages }) => {
         <span
           onClick={() => {
             setPage(++page);
+            setIsLoading(true);
           }}
         >
           <i>

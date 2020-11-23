@@ -68,7 +68,12 @@ const Home = () => {
         </div>
       </section>
       <AllCharacters data={data} />
-      <Pagination page={page} setPage={setPage} totalPages={totalPages} />
+      <Pagination
+        page={page}
+        setPage={setPage}
+        totalPages={totalPages}
+        setIsLoading={setIsLoading}
+      />
     </>
   );
 };
